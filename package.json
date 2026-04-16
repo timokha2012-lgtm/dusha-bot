@@ -1,0 +1,8 @@
+{
+  "name": "dusha-bot",
+  "version": "1.0.0",
+  "main": "dusha_bot.js",
+  "scripts": {
+    "start": "node dusha_bot.js"
+  }
+}
