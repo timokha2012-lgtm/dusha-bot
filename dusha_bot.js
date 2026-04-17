@@ -155,7 +155,7 @@ ${answerText}
 
   return result.content ? result.content.map(i => i.text || '').join('') : 'Спасибо за честность. Напишу тебе лично.';
 }
-
+await tg('sendMessage', { chat_id: ADMIN_ID, text: '📋 *Разбор клиента:*\n\n' + analysis, parse_mode: 'Markdown' });
 async function notifyAdmin(userId, username, name, answers) {
   if (!ADMIN_ID) return;
   const text = `🔔 *Новый клиент в воронке*\n\nИмя: ${name}\nUsername: @${username || 'нет'}\nID: ${userId}\n\nОтветы:\n${answers.map((a,i) => `${i+1}. ${a}`).join('\n')}`;
