@@ -66,7 +66,7 @@ function tg(method, data) {
 function claude(prompt) {
   return apiRequest(
     'api.anthropic.com', '/v1/messages',
-    { model: 'claude-sonnet-4-20250514', max_tokens: 800, messages: [{ role: 'user', content: prompt }] },
+    { model: 'claude-sonnet-4-6', max_tokens: 800, messages: [{ role: 'user', content: prompt }] },
     { 'x-api-key': ANTHROPIC_KEY, 'anthropic-version': '2023-06-01' }
   );
 }
