@@ -49,6 +49,7 @@ function apiRequest(hostname, path, data, extraHeaders) {
     const headers = { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) };
     if (extraHeaders) Object.assign(headers, extraHeaders);
     const req = https.request({ hostname, path, method: 'POST', headers }, res => {
+      res.setEncoding('utf8');
       let d = '';
       res.on('data', c => d += c);
       res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { resolve({}); } });
